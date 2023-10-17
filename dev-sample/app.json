@@ -1,0 +1,39 @@
+{
+  "id": "eeb5ab52-dbde-4bac-b267-c44446a1b7ef",
+  "name": "SummitNA 2023 Dev Sample",
+  "publisher": "SummitNA 2023",
+  "version": "22.5.0.0",
+  "brief": "A sample app for the SummitNA 2023 conference",
+  "description": "A sample app for the SummitNA 2023 conference",
+  "privacyStatement": "",
+  "EULA": "https://localhost/EULA.html",
+  "help": "https://localhost/help.html",
+  "url": "https://localhost",
+  "logo": "./logo/logo.png",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "23.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50128
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "12.0",
+  "features": [
+    "NoImplicitWith",
+    "TranslationFile"
+  ],
+  "suppressWarnings": [
+    "AS0051",
+    "AS0052",
+    "AS0084",
+    "AS0092"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "api-sample"
+		},
+		{
+			"path": "dev-sample"
+		},
+		{
+			"path": "dep-sample"
+		},
+		{
+			"path": "supporting-files"
+		}
+	],
+	"settings": {
+		"al.packageCachePath": "..\\supporting-files\\.alpackages",
+		"al.snapshotDebuggingPath": "..\\supporting-files\\.snapshot",
+		"al.snapshotOutputPath": "..\\Supporting-Files\\.snapshots",
+		"al.incrementalBuild": false,
+		"al.backgroundCodeAnalysis": true,
+		"editor.renderWhitespace": "all",
+		"al.enableCodeAnalysis": true,
+		"al.ruleSetPath": "..\\supporting-files\\sa.ruleset.json"
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [],
+		"compounds": []
+	}
+}

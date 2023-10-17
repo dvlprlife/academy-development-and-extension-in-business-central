@@ -1,0 +1,11 @@
+{
+    "name": "Rules",
+    "description": "The rules for codes in AL.",
+    "rules": [
+        {
+            "id": "AS0084",
+            "action": "Hidden",
+            "justification": "The ID range '[n..n]' is not valid. It must be within the range allocated to the partner for AppSource, within the range '[1000000..75999999]' allocated to AppSource applications, and outside the range '[50000..99999]' allocated to per-tenant customizations."
+        }
+    ]
+}

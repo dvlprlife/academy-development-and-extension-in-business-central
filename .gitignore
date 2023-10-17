@@ -1,0 +1,45 @@
+# Binary files
+.Ds_Store
+
+# Cache
+[Bb]in
+[Oo]bj
+
+## AL
+# Settings
+.vscode/
+
+# Cache
+.alcache/
+
+# Symbols
+.alpackages/
+.packages/
+
+# Snapshots
+.snapshots/
+
+# Templates
+.altemplates/
+
+# Testing Output
+.output/
+
+# Extension App File
+*.app
+
+# Rapid Application Development File
+rad.json
+
+# Translation Base File
+*.g.xlf
+
+# License File
+*.flf
+
+# Test results File
+TestResults.xml
+
+# BcptTestResults File
+bcptTestResults.json
+
