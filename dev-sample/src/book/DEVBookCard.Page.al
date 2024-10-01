@@ -2,14 +2,14 @@ page 50102 "DEV Book Card"
 {
     ApplicationArea = All;
     Caption = 'Book Card';
+    DataCaptionFields = "No.", Title;
     PageType = Card;
     SourceTable = "DEV Book";
-    DataCaptionFields = "No.", Title;
     UsageCategory = None;
 
     layout
     {
-        area(content)
+        area(Content)
         {
             group(General)
             {
@@ -39,7 +39,6 @@ page 50102 "DEV Book Card"
                 {
                     ToolTip = 'Specifies the value of the Description field.';
                 }
-
                 group(LongDescription)
                 {
                     Caption = 'Long Description';
@@ -76,22 +75,22 @@ page 50102 "DEV Book Card"
         }
     }
 
-    var
-        LongDescriptionText: Text;
-
     trigger OnAfterGetRecord()
     begin
         LongDescriptionText := GetLongDescription();
     end;
+
+    var
+        LongDescriptionText: Text;
 
     procedure GetLongDescription() escriptionText: Text
     var
         TypeHelper: Codeunit "Type Helper";
         InStream: InStream;
     begin
-        Rec.CalcFields("Description");
-        Rec.Description.CreateInStream(InStream, TEXTENCODING::UTF8);
-        exit(TypeHelper.TryReadAsTextWithSepAndFieldErrMsg(InStream, TypeHelper.LFSeparator(), Rec.FieldName("Description")));
+        Rec.CalcFields(Description);
+        Rec.Description.CreateInStream(InStream, TextEncoding::UTF8);
+        exit(TypeHelper.TryReadAsTextWithSepAndFieldErrMsg(InStream, TypeHelper.LFSeparator(), Rec.FieldName(Description)));
     end;
 
     procedure SetLongDescription(DescriptionText: Text)
@@ -99,7 +98,7 @@ page 50102 "DEV Book Card"
         OutStream: OutStream;
     begin
         Clear(Rec.Description);
-        Rec.Description.CreateOutStream(OutStream, TEXTENCODING::UTF8);
+        Rec.Description.CreateOutStream(OutStream, TextEncoding::UTF8);
         OutStream.WriteText(DescriptionText);
         Rec.Modify();
     end;

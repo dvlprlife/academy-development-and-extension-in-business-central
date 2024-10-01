@@ -6,10 +6,9 @@ page 50105 "DEV Book Rental"
     SourceTable = "DEV Book Rental Header";
     UsageCategory = None;
 
-
     layout
     {
-        area(content)
+        area(Content)
         {
             group(General)
             {
@@ -23,7 +22,6 @@ page 50105 "DEV Book Rental"
                 {
                     ToolTip = 'Specifies the value of the Date field.';
                 }
-
                 field(Description; Rec.Description)
                 {
                     ToolTip = 'Specifies the value of the Description field.';
@@ -48,7 +46,6 @@ page 50105 "DEV Book Rental"
             part(Rentalines; "DEV Book Rental Subform")
             {
                 ApplicationArea = Basic, Suite;
-
                 SubPageLink = "Rental Header No." = field("No.");
                 UpdatePropagation = Both;
             }
@@ -60,10 +57,9 @@ page 50105 "DEV Book Rental"
         {
             action(CheckRentalLines)
             {
-                ApplicationArea = All;
                 Caption = 'Check Rental Lines';
-                ToolTip = 'Check Rental Lines';
                 Image = Check;
+                ToolTip = 'Check Rental Lines';
 
                 trigger OnAction()
                 var

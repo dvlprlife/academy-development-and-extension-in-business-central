@@ -14,14 +14,16 @@
 		}
 	],
 	"settings": {
-		"al.packageCachePath": "..\\supporting-files\\.alpackages",
-		"al.snapshotDebuggingPath": "..\\supporting-files\\.snapshot",
-		"al.snapshotOutputPath": "..\\Supporting-Files\\.snapshots",
-		"al.incrementalBuild": false,
-		"al.backgroundCodeAnalysis": true,
-		"editor.renderWhitespace": "all",
+		"al.backgroundCodeAnalysis": false,
+		"al.browser": "SystemDefault",
 		"al.enableCodeAnalysis": true,
-		"al.ruleSetPath": "..\\supporting-files\\sa.ruleset.json"
+		"al.incognito": false,
+		"al.incrementalBuild": false,
+		"al.packageCachePath": "../supporting-files/.alpackages",
+		"al.ruleSetPath": "../supporting-files/sa.ruleset.json",
+		"al.snapshotDebuggingPath": "../supporting-files/.snapshot",
+		"al.snapshotOutputPath": "../Supporting-Files/.snapshots",
+		"editor.renderWhitespace": "all"
 	},
 	"launch": {
 		"version": "0.2.0",

@@ -9,7 +9,7 @@ page 50109 "DEV Author Book List"
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(General)
             {
@@ -27,9 +27,6 @@ page 50109 "DEV Author Book List"
         }
     }
 
-    var
-        BookTitle: Text[100];
-
     trigger OnAfterGetRecord()
     var
         Book: Record "DEV Book";
@@ -37,4 +34,7 @@ page 50109 "DEV Author Book List"
         Book.Get(Rec."Book No.");
         BookTitle := Book.Title;
     end;
+
+    var
+        BookTitle: Text[100];
 }

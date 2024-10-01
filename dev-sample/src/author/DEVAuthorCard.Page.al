@@ -8,7 +8,7 @@ page 50101 "DEV Author Card"
 
     layout
     {
-        area(content)
+        area(Content)
         {
             group(General)
             {
@@ -16,7 +16,6 @@ page 50101 "DEV Author Card"
                 field("No."; Rec."No.")
                 {
                     ToolTip = 'Specifies the value of the No. field.';
-
                 }
                 field(Status; Rec.Status)
                 {
@@ -74,11 +73,10 @@ page 50101 "DEV Author Card"
                 {
                     ToolTip = 'Specifies the value of the Email field.';
                 }
-
             }
         }
 
-        area(factboxes)
+        area(FactBoxes)
         {
             part(Control149; "DEV Author Factbox")
             {
@@ -91,17 +89,15 @@ page 50101 "DEV Author Card"
     {
         area(Promoted)
         {
-            actionref(BookRef; Book)
-            { }
+            actionref(BookRef; Book) { }
         }
-
         area(Navigation)
         {
             action(Book)
             {
+                ApplicationArea = Basic, Suite;
                 Caption = 'Books';
                 Image = Card;
-                ApplicationArea = Basic, Suite;
                 ToolTip = 'View orthe books for this book.';
 
                 trigger OnAction()

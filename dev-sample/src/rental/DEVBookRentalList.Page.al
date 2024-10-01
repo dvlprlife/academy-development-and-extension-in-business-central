@@ -13,7 +13,7 @@ page 50108 "DEV Book Rental List"
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(General)
             {

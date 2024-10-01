@@ -17,10 +17,10 @@ table 50102 "DEV Book Author"
         }
         field(10; "Author Last Name"; Text[30])
         {
-            Caption = 'Author Name';
-            FieldClass = FlowField;
             CalcFormula = lookup("DEV Author"."Last Name" where("No." = field("Author No.")));
+            Caption = 'Author Name';
             Editable = false;
+            FieldClass = FlowField;
         }
     }
 

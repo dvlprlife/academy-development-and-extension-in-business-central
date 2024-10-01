@@ -2,8 +2,8 @@ table 50101 "DEV Book"
 {
     Caption = 'Book';
     DataClassification = CustomerContent;
-    LookupPageId = "DEV Book List";
     DrillDownPageId = "DEV Book List";
+    LookupPageId = "DEV Book List";
     fields
     {
         field(1; "No."; Code[20])
@@ -24,11 +24,11 @@ table 50101 "DEV Book"
             Caption = 'Description';
             Subtype = Memo;
         }
-        field(20; "Book Type"; enum "DEV Book Type")
+        field(20; "Book Type"; Enum "DEV Book Type")
         {
             Caption = 'Type';
         }
-        field(25; Status; enum "DEV Book Status")
+        field(25; Status; Enum "DEV Book Status")
         {
             Caption = 'Status';
 
@@ -53,12 +53,8 @@ table 50101 "DEV Book"
     }
     fieldgroups
     {
-        fieldgroup(DropDown; Title, "Book Type")
-        {
-        }
-        fieldgroup(Brick; "No.", Title, Status)
-        {
-        }
+        fieldgroup(DropDown; Title, "Book Type") { }
+        fieldgroup(Brick; "No.", Title, Status) { }
     }
 
     trigger OnDelete()
@@ -73,6 +69,5 @@ table 50101 "DEV Book"
 
         BookAuthor.SetRange("Book No.", "No.");
         BookAuthor.DeleteAll();
-
     end;
 }

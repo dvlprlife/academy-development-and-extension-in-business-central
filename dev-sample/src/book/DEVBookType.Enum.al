@@ -2,7 +2,7 @@ enum 50102 "DEV Book Type"
 {
     Extensible = true;
 
-    value(0; "Fiction")
+    value(0; Fiction)
     {
         Caption = 'Fiction';
     }

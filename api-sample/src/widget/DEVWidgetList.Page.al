@@ -8,7 +8,7 @@ page 50201 "DEV Widget List"
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(General)
             {

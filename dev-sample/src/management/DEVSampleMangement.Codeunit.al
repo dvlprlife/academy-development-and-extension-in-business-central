@@ -7,13 +7,9 @@ codeunit 50102 "DEV Sample Mangement"
 
     procedure DoStuff()
     begin
-
     end;
 
     local procedure LocalDoStuff()
     begin
-
     end;
 }
-
-

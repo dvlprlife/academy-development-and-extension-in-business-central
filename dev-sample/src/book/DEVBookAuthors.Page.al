@@ -8,7 +8,7 @@ page 50104 "DEV Book Authors"
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(General)
             {
@@ -23,15 +23,12 @@ page 50104 "DEV Book Authors"
                 field("Author Name"; FullName)
                 {
                     Caption = 'Full Name';
-                    ToolTip = 'Specifies the value of the Author Name field.';
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Author Name field.';
                 }
             }
         }
     }
-
-    var
-        FullName: Text[100];
 
     trigger OnAfterGetRecord()
     var
@@ -39,4 +36,7 @@ page 50104 "DEV Book Authors"
     begin
         FullName := Author.GetAuthorName(Rec."Author No.");
     end;
+
+    var
+        FullName: Text[100];
 }

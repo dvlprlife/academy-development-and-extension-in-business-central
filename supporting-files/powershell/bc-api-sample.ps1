@@ -4,7 +4,7 @@ $scope = "https://api.businesscentral.dynamics.com/.default"
 
 $clientid = "your-client-id-guid"
 $clientsecret = "your-client-secret-guid"
-$environment = "Sandbox-guid"
+$environment = "Environment Name"
 $tenantID = "your-tenant-id-guid"
 $company = "your-company-guid"
 

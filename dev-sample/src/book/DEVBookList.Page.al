@@ -2,14 +2,14 @@ page 50103 "DEV Book List"
 {
     ApplicationArea = All;
     Caption = 'Book List';
+    CardPageId = "DEV Book Card";
     PageType = List;
     SourceTable = "DEV Book";
     UsageCategory = Lists;
-    CardPageId = "DEV Book Card";
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(General)
             {

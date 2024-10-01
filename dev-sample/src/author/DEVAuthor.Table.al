@@ -3,8 +3,8 @@ table 50100 "DEV Author"
     Caption = 'Author';
     DataCaptionFields = "No.", "Last Name", "First Name";
     DataClassification = CustomerContent;
-    DrillDownPageID = "DEV Author List";
-    LookupPageID = "DEV Author List";
+    DrillDownPageId = "DEV Author List";
+    LookupPageId = "DEV Author List";
 
     fields
     {
@@ -14,11 +14,7 @@ table 50100 "DEV Author"
 
             trigger OnValidate()
             begin
-                if (Rec."No." <> xRec."No.") then begin
-                    GetSetup();
-                    NoSeriesManagement.TestManual(ResourcesSetup."DEV Author Nos.");
-                    "No. Series" := '';
-                end;
+                TestNoSeries();
             end;
         }
         field(5; "First Name"; Text[30])
@@ -49,7 +45,6 @@ table 50100 "DEV Author"
         {
             Caption = 'Post Code';
         }
-
         field(45; County; Text[30])
         {
             Caption = 'County';
@@ -79,7 +74,7 @@ table 50100 "DEV Author"
             DataClassification = EndUserIdentifiableInformation;
             ExtendedDatatype = Masked;
         }
-        field(70; Status; enum "DEV Author Status")
+        field(70; Status; Enum "DEV Author Status")
         {
             Caption = 'Status';
         }
@@ -91,10 +86,10 @@ table 50100 "DEV Author"
         }
         field(80; "No. Books"; Integer)
         {
+            CalcFormula = count("DEV Book Author" where("Author No." = field("No.")));
             Caption = 'No. Books';
             Editable = false;
             FieldClass = FlowField;
-            CalcFormula = count("DEV Book Author" where("Author No." = field("No.")));
         }
     }
     keys
@@ -107,12 +102,8 @@ table 50100 "DEV Author"
 
     fieldgroups
     {
-        fieldgroup(DropDown; "No.", "First Name", "Last Name")
-        {
-        }
-        fieldgroup(Brick; "Last Name", "First Name", "Status")
-        {
-        }
+        fieldgroup(DropDown; "No.", "First Name", "Last Name") { }
+        fieldgroup(Brick; "Last Name", "First Name", Status) { }
     }
 
     trigger OnInsert()
@@ -126,9 +117,10 @@ table 50100 "DEV Author"
             exit;
 
         if ("No." = '') then begin
-            GetSetup();
-            ResourcesSetup.TestField("DEV Author Nos.");
-            NoSeriesManagement.InitSeries(ResourcesSetup."DEV Author Nos.", xRec."No. Series", 0D, "No.", "No. Series");
+            "No. Series" := GetNoSeriesCode();
+            if NoSeries.AreRelated("No. Series", xRec."No. Series") then
+                "No. Series" := xRec."No. Series";
+            "No." := NoSeries.GetNextNo("No. Series", WorkDate());
         end;
     end;
 
@@ -140,7 +132,7 @@ table 50100 "DEV Author"
 
     var
         ResourcesSetup: Record "Resources Setup";
-        NoSeriesManagement: Codeunit NoSeriesManagement;
+        NoSeries: Codeunit "No. Series";
         SetupRead: Boolean;
 
     procedure GetAuthorName(No: Code[20]) FullName: Text[100]
@@ -149,9 +141,35 @@ table 50100 "DEV Author"
         AuthorNameTxt: Label '%1 %2', Comment = '%1 First Name, %2 Last Name';
     begin
         if Author.Get(No) then begin
-            Fullname := StrSubstNo(AuthorNameTxt, Author."First Name", Author."Last Name");
+            FullName := StrSubstNo(AuthorNameTxt, Author."First Name", Author."Last Name");
             FullName := CopyStr(FullName.Trim(), 1, MaxStrLen(FullName));
         end;
+    end;
+
+    local procedure GetNoSeriesCode(): Code[20]
+    var
+        IsHandled: Boolean;
+        NoSeriesCode: Code[20];
+    begin
+        GetSetup();
+        IsHandled := false;
+        OnBeforeGetNoSeriesCode(Rec, ResourcesSetup, NoSeriesCode, IsHandled);
+        if IsHandled then
+            exit(NoSeriesCode);
+
+        ResourcesSetup.TestField("DEV Author Nos.");
+        NoSeriesCode := ResourcesSetup."DEV Author Nos.";
+
+        OnAfterGetNoSeriesCode(Rec, ResourcesSetup, NoSeriesCode);
+
+        if NoSeries.IsAutomatic(NoSeriesCode) then
+            exit(NoSeriesCode);
+
+        if NoSeries.HasRelatedSeries(NoSeriesCode) then
+            if NoSeries.LookupRelatedNoSeries(NoSeriesCode, "No. Series") then
+                exit("No. Series");
+
+        exit(NoSeriesCode);
     end;
 
     local procedure GetSetup()
@@ -163,8 +181,41 @@ table 50100 "DEV Author"
         SetupRead := true;
     end;
 
+    local procedure TestNoSeries()
+    var
+        Author: Record "DEV Author";
+        IsHandled: Boolean;
+    begin
+        IsHandled := false;
+        OnBeforeTestNoSeries(Rec, xRec, IsHandled);
+        if IsHandled then
+            exit;
+
+        if "No." <> xRec."No." then
+            if not Author.Get(Rec."No.") then begin
+                GetSetup();
+                NoSeries.TestManual(GetNoSeriesCode());
+                "No. Series" := '';
+            end;
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterGetNoSeriesCode(var Author: Record "DEV Author"; ResourcesSetup: Record "Resources Setup"; var NoSeriesCode: Code[20])
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeGetNoSeriesCode(var Author: Record "DEV Author"; ResourcesSetup: Record "Resources Setup"; var NoSeriesCode: Code[20]; var Handled: Boolean)
+    begin
+    end;
+
     [IntegrationEvent(false, false)]
     local procedure OnBeforeInsert(var Author: Record "DEV Author"; var Handled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnBeforeTestNoSeries(var Author: Record "DEV Author"; xAuthor: Record "DEV Author"; var Handled: Boolean)
     begin
     end;
 }

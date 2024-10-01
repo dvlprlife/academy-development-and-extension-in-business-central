@@ -1,9 +1,9 @@
 page 50200 "DEV Widget Entity"
 {
-
     APIGroup = 'sample';
     APIPublisher = 'summitNA';
     APIVersion = 'v2.0';
+    ApplicationArea = All;
     Caption = 'widgetEntity', Locked = true;
     ChangeTrackingAllowed = true;
     DelayedInsert = true;
@@ -15,30 +15,26 @@ page 50200 "DEV Widget Entity"
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(General)
             {
                 field(id; Rec.SystemId)
                 {
-                    ApplicationArea = All;
                     Caption = 'Id', Locked = true;
                     Editable = false;
                 }
                 field(no; Rec."No.")
                 {
-                    ApplicationArea = All;
-                    caption = 'no', Locked = true;
+                    Caption = 'no', Locked = true;
                 }
                 field(description; Rec.Description)
                 {
-                    ApplicationArea = All;
-                    caption = 'description', Locked = true;
+                    Caption = 'description', Locked = true;
                 }
                 field(combinedtext; combinedText)
                 {
-                    ApplicationArea = All;
-                    caption = 'combinedText', Locked = true;
+                    Caption = 'combinedText', Locked = true;
                 }
             }
         }

@@ -2,22 +2,21 @@ page 50100 "DEV Author List"
 {
     ApplicationArea = All;
     Caption = 'Author List';
+    CardPageId = "DEV Author Card";
+    Editable = false;
     PageType = List;
     SourceTable = "DEV Author";
     UsageCategory = Lists;
-    Editable = false;
-    CardPageId = "DEV Author Card";
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(General)
             {
                 field("No."; Rec."No.")
                 {
                     ToolTip = 'Specifies the value of the No. field.';
-
                 }
                 field("First Name"; Rec."First Name")
                 {
@@ -44,9 +43,9 @@ page 50100 "DEV Author List"
         {
             action(Book)
             {
+                ApplicationArea = Basic, Suite;
                 Caption = 'Books';
                 Image = Card;
-                ApplicationArea = Basic, Suite;
                 ToolTip = 'View orthe books for this book.';
 
                 trigger OnAction()

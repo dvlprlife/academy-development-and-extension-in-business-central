@@ -1,16 +1,16 @@
 page 50106 "DEV Book Rental Subform"
 {
     ApplicationArea = All;
+    AutoSplitKey = true;
     Caption = 'Rental Lines';
-    PageType = ListPart;
-    SourceTable = "DEV Book Rental Line";
     DelayedInsert = true;
     LinksAllowed = false;
-    AutoSplitKey = true;
+    PageType = ListPart;
+    SourceTable = "DEV Book Rental Line";
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(General)
             {

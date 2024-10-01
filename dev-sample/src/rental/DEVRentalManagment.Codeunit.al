@@ -17,7 +17,6 @@ codeunit 50101 "DEV Rental Managment"
             repeat
                 CheckLine(BookRentalLine);
             until BookRentalLine.Next() = 0;
-
     end;
 
     local procedure CheckLine(BookRentalLine: Record "DEV Book Rental Line")
