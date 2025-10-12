@@ -1,3 +1,5 @@
+namespace SummitNA.BookManagement.Rental;
+
 enum 50101 "DEV Rental Status"
 {
     Extensible = true;

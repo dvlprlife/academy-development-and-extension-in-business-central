@@ -1,3 +1,5 @@
+namespace SummitNA.BookManagement.Author;
+
 enum 50100 "DEV Author Status"
 {
     Extensible = true;
@@ -6,12 +8,12 @@ enum 50100 "DEV Author Status"
     {
         Caption = ' ';
     }
-    value(1; Union)
+    value(1; Active)
     {
-        Caption = 'Union';
+        Caption = 'Active';
     }
-    value(2; NonUnion)
+    value(2; Inactive)
     {
-        Caption = 'Non Union';
+        Caption = 'Inactive';
     }
 }

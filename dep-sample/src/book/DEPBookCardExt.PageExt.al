@@ -1,3 +1,7 @@
+namespace SummitNA.BookManagementExt.BookExt;
+
+using SummitNA.BookManagement.Book;
+
 pageextension 50120 "DEP Book Card Ext" extends "DEV Book Card"
 {
     layout
@@ -14,7 +18,6 @@ pageextension 50120 "DEP Book Card Ext" extends "DEV Book Card"
             field(DEPYear; Rec."DEP Year")
             {
                 ApplicationArea = All;
-                ToolTip = 'The year of publication of the book';
             }
         }
 
@@ -23,7 +26,6 @@ pageextension 50120 "DEP Book Card Ext" extends "DEV Book Card"
             field(DEPPrice; Rec."DEP Price")
             {
                 ApplicationArea = All;
-                ToolTip = 'The price of  the book';
             }
 
         }

@@ -1,3 +1,9 @@
+namespace SummitNA.BookManagement.Rental;
+
+using Microsoft.CRM.Contact;
+using Microsoft.Foundation.NoSeries;
+using Microsoft.Projects.Resources.Setup;
+
 table 50103 "DEV Book Rental Header"
 {
     Caption = 'Book Rental Header';
@@ -10,20 +16,22 @@ table 50103 "DEV Book Rental Header"
         field(1; "No."; Code[20])
         {
             Caption = 'No.';
-
+            ToolTip = 'Specifies the unique identifier for the book rental contract.';
             trigger OnValidate()
             begin
                 TestNoSeries();
             end;
         }
-        field(5; "Date"; Date)
+        field(5; "Contract Date"; Date)
         {
-            Caption = 'Date';
+            Caption = 'Contract Date';
+            ToolTip = 'Specifies the date when the book rental contract was created.';
         }
         field(10; "Contact No."; Code[20])
         {
             Caption = 'Contact No.';
             TableRelation = Contact."No." where(Type = const("Contact Type"::Person));
+            ToolTip = 'Specifies the contact number of the person who is renting the books.';
         }
         field(20; "Contact Name"; Text[100])
         {
@@ -31,15 +39,23 @@ table 50103 "DEV Book Rental Header"
             Caption = 'Contact Name';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Specifies the name of the contact who is renting the books. This field is automatically populated based on the Contact No.';
         }
         field(30; Description; Text[50])
         {
             Caption = 'Description';
+            ToolTip = 'Specifies additional information or notes about the book rental contract.';
         }
         field(35; Status; Enum "DEV Rental Status")
         {
             Caption = 'Status';
             Editable = false;
+            ToolTip = 'Specifies the current status of the book rental contract, such as Open, Closed, or Cancelled.';
+        }
+        field(40; "Return Date"; Date)
+        {
+            Caption = 'Return Date';
+            ToolTip = 'Specifies the date by which the rented books should be returned.';
         }
         field(900; "No. Series"; Code[20])
         {
@@ -55,7 +71,7 @@ table 50103 "DEV Book Rental Header"
         {
             Clustered = true;
         }
-        key(key1; Date, "Contact No.") { }
+        key(key1; "Contract Date", "Contact No.") { }
     }
 
     trigger OnInsert()
@@ -73,6 +89,9 @@ table 50103 "DEV Book Rental Header"
                 "No. Series" := xRec."No. Series";
             "No." := NoSeries.GetNextNo("No. Series", WorkDate());
         end;
+
+        Rec."Contract Date" := WorkDate();
+        Rec."Return Date" := CalcDate('<+30D>', Rec."Contract Date");
     end;
 
     trigger OnDelete()

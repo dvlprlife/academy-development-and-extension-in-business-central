@@ -1,7 +1,8 @@
-page 50107 "DEV Author Factbox"
+namespace SummitNA.BookManagement.Author;
+page 50107 "DEV Author FactBox"
 {
     ApplicationArea = All;
-    Caption = 'Author Factbox';
+    Caption = 'Author FactBox';
     DeleteAllowed = false;
     InsertAllowed = false;
     LinksAllowed = false;
@@ -15,7 +16,6 @@ page 50107 "DEV Author Factbox"
             field(NoBooks; Rec."No. Books")
             {
                 ShowCaption = true;
-                ToolTip = 'Specifies the number of books an author wrote.';
             }
         }
     }

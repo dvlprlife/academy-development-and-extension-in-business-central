@@ -1,3 +1,5 @@
+namespace SummitNA.BookManagementExt.Management;
+
 codeunit 50121 "DEP Number Management"
 {
 

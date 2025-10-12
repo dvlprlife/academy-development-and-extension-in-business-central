@@ -1,3 +1,9 @@
+namespace SummitNA.BookManagement.Author;
+using Microsoft.Foundation.NoSeries;
+using Microsoft.Projects.Resources.Setup;
+using SummitNA.BookManagement.Book;
+using System.EMail;
+
 table 50100 "DEV Author"
 {
     Caption = 'Author';
@@ -11,7 +17,7 @@ table 50100 "DEV Author"
         field(1; "No."; Code[20])
         {
             Caption = 'No.';
-
+            ToolTip = 'Specifies the value of the No. field.';
             trigger OnValidate()
             begin
                 TestNoSeries();
@@ -20,45 +26,54 @@ table 50100 "DEV Author"
         field(5; "First Name"; Text[30])
         {
             Caption = 'First Name';
+            ToolTip = 'Specifies the value of the First Name field.';
         }
         field(10; "Middle Name"; Text[30])
         {
             Caption = 'Middle Name';
+            ToolTip = 'Specifies the value of the Middle Name field.';
         }
         field(15; "Last Name"; Text[30])
         {
             Caption = 'Last Name';
+            ToolTip = 'Specifies the value of the Last Name field.';
         }
         field(25; Address; Text[100])
         {
             Caption = 'Address';
+            ToolTip = 'Specifies the value of the Address field.';
         }
         field(30; "Address 2"; Text[50])
         {
             Caption = 'Address 2';
+            ToolTip = 'Specifies the value of the Address 2 field.';
         }
         field(35; City; Text[30])
         {
             Caption = 'City';
+            ToolTip = 'Specifies the value of the City field.';
         }
         field(40; "Post Code"; Code[20])
         {
             Caption = 'Post Code';
+            ToolTip = 'Specifies the value of the Post Code field.';
         }
         field(45; County; Text[30])
         {
             Caption = 'County';
+            ToolTip = 'Specifies the value of the County field.';
         }
         field(50; "Phone No."; Text[30])
         {
             Caption = 'Phone No.';
             ExtendedDatatype = PhoneNo;
+            ToolTip = 'Specifies the value of the Phone No. field.';
         }
         field(55; "E-Mail"; Text[80])
         {
             Caption = 'Email';
             ExtendedDatatype = EMail;
-
+            ToolTip = 'Specifies the value of the Email field.';
             trigger OnValidate()
             var
                 MailManagement: Codeunit "Mail Management";
@@ -72,11 +87,27 @@ table 50100 "DEV Author"
         {
             Caption = 'Social Security No.';
             DataClassification = EndUserIdentifiableInformation;
-            ExtendedDatatype = Masked;
+            MaskType = Concealed;
+            ToolTip = 'Specifies the value of the Social Security No. field.';
         }
         field(70; Status; Enum "DEV Author Status")
         {
             Caption = 'Status';
+            ToolTip = 'Specifies the value of the Status field.';
+        }
+        field(73; "Author Type"; Code[10])
+        {
+            Caption = 'Author Type';
+            TableRelation = "DEV Author Type".Code;
+            ToolTip = 'Specifies the type of author, such as fiction, non-fiction, or academic.';
+        }
+        field(74; Rating; Integer)
+        {
+            BlankZero = true;
+            Caption = 'Rating';
+            MinValue = 1;
+            MaxValue = 5;
+            ToolTip = 'Specifies the rating of the author from 1 to 5.';
         }
         field(75; "No. Series"; Code[20])
         {
@@ -90,6 +121,7 @@ table 50100 "DEV Author"
             Caption = 'No. Books';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Specifies the number of books an author wrote.';
         }
     }
     keys

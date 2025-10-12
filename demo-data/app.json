@@ -1,10 +1,10 @@
 {
-  "id": "eeb5ac52-d2de-4b1c-b2b7-c44446a1b7ef",
-  "name": "SummitNA Book Management Extension",
+  "id": "eeb5ac52-d2de-4f2c-b697-c56566a1b7ef",
+  "name": "SummitNA Book Management Demo Data",
   "publisher": "SummitNA 2025",
   "version": "27.0.0.0",
-  "brief": "A sample app for the SummitNA 2025 conference",
-  "description": "A sample app for the SummitNA 2025 conference",
+  "brief": "Demo Data for SummitNA Book Management",
+  "description": "Demo Data for SummitNA Book Management",
   "privacyStatement": "https://localhost/privacy.html",
   "EULA": "https://localhost/EULA.html",
   "help": "https://localhost/help.html",
@@ -23,8 +23,8 @@
   "application": "27.0.0.0",
   "idRanges": [
     {
-      "from": 50120,
-      "to": 50149
+      "from": 50320,
+      "to": 50349
     }
   ],
   "resourceExposurePolicy": {
