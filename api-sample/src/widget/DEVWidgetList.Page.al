@@ -14,16 +14,13 @@ page 50201 "DEV Widget List"
             {
                 field("No."; Rec."No.")
                 {
-                    ToolTip = 'Specifies the value of the No. field.';
                 }
                 field(Description; Rec.Description)
                 {
-                    ToolTip = 'Specifies the value of the Description field.';
                 }
                 field(Random; Rec.Random)
                 {
                     Editable = false;
-                    ToolTip = 'Specifies the value of the Random field.';
                 }
                 field(SystemId; Rec.SystemId)
                 {
