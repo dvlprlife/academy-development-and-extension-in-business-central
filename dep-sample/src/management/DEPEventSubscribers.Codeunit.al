@@ -1,3 +1,11 @@
+namespace SummitNA.BookManagementExt.Management;
+
+using SummitNA.BookManagement.Author;
+using Microsoft.Sales.Customer;
+using Microsoft.Sales.Posting;
+using Microsoft.Sales.Document;
+
+
 codeunit 50120 "DEP Event Subscribers"
 {
     // [EventSubscriber(ObjectType: ObjectType, ObjectId: Integer, EventName: Text, ElementName: Text, SkipOnMissingLicense: Boolean, SkipOnMissingPermission: Boolean)]

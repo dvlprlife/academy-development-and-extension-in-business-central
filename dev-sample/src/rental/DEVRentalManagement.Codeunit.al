@@ -1,4 +1,8 @@
-codeunit 50101 "DEV Rental Managment"
+namespace SummitNA.BookManagement.Rental;
+
+using SummitNA.BookManagement.Book;
+
+codeunit 50101 "DEV Rental Management"
 {
     Access = Internal;
     Subtype = Normal;

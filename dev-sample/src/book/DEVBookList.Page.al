@@ -1,3 +1,5 @@
+namespace SummitNA.BookManagement.Book;
+
 page 50103 "DEV Book List"
 {
     ApplicationArea = All;
@@ -15,15 +17,12 @@ page 50103 "DEV Book List"
             {
                 field("No."; Rec."No.")
                 {
-                    ToolTip = 'Specifies the value of the No. field.';
                 }
                 field(Title; Rec.Title)
                 {
-                    ToolTip = 'Specifies the value of the Title field.';
                 }
-                field("Book Type"; Rec."Book Type")
+                field(BookType; Rec."Book Type")
                 {
-                    ToolTip = 'Specifies the value of the Book Type field.';
                 }
             }
         }

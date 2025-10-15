@@ -1,11 +1,11 @@
 {
   "id": "eeb5ac52-d2de-4b1c-b2b7-c44446a1b7ef",
-  "name": "SummitNA 2024 Dependency Sample",
-  "publisher": "SummitNA 2024",
-  "version": "24.0.0.0",
-  "brief": "A sample app for the SummitNA 2024 conference",
-  "description": "A sample app for the SummitNA 2024 conference",
-  "privacyStatement": "",
+  "name": "SummitNA Book Management Extension",
+  "publisher": "SummitNA 2025",
+  "version": "27.0.0.0",
+  "brief": "A sample app for the SummitNA 2025 conference",
+  "description": "A sample app for the SummitNA 2025 conference",
+  "privacyStatement": "https://localhost/privacy.html",
   "EULA": "https://localhost/EULA.html",
   "help": "https://localhost/help.html",
   "url": "https://localhost",
@@ -13,14 +13,14 @@
   "dependencies": [
     {
       "id": "eeb5ab52-dbde-4bac-b267-c44446a1b7ef",
-      "name": "SummitNA 2024 Dev Sample",
-      "publisher": "SummitNA 2024",
-      "version": "24.0.0.0"
+      "name": "SummitNA Book Management",
+      "publisher": "SummitNA 2025",
+      "version": "27.0.0.0"
     }
   ],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "24.0.0.0",
+  "application": "27.0.0.0",
   "idRanges": [
     {
       "from": 50120,

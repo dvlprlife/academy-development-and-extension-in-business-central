@@ -1,3 +1,6 @@
+namespace SummitNA.BookManagement.Book;
+
+using System.Reflection;
 page 50102 "DEV Book Card"
 {
     ApplicationArea = All;
@@ -17,19 +20,15 @@ page 50102 "DEV Book Card"
 
                 field("No."; Rec."No.")
                 {
-                    ToolTip = 'Specifies the value of the No. field.';
                 }
                 field(Title; Rec.Title)
                 {
-                    ToolTip = 'Specifies the value of the Title field.';
                 }
-                field("Book Type"; Rec."Book Type")
+                field(BookType; Rec."Book Type")
                 {
-                    ToolTip = 'Specifies the value of the Book Type field.';
                 }
                 field(Status; Rec.Status)
                 {
-                    ToolTip = 'Specifies the value of the status field.';
                 }
             }
             group(Description)
@@ -37,7 +36,6 @@ page 50102 "DEV Book Card"
                 Caption = 'Description';
                 field("Short Description"; Rec."Short Description")
                 {
-                    ToolTip = 'Specifies the value of the Description field.';
                 }
                 group(LongDescription)
                 {
@@ -83,7 +81,7 @@ page 50102 "DEV Book Card"
     var
         LongDescriptionText: Text;
 
-    procedure GetLongDescription() escriptionText: Text
+    procedure GetLongDescription() DescriptionText: Text
     var
         TypeHelper: Codeunit "Type Helper";
         InStream: InStream;

@@ -1,4 +1,5 @@
-codeunit 50102 "DEV Sample Mangement"
+namespace SummitNA.BookManagement.Management;
+codeunit 50102 "DEV Sample Management"
 {
     Access = Public;
 

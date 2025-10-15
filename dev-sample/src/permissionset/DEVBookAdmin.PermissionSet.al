@@ -4,6 +4,8 @@ permissionset 50100 "DEV Book Admin"
     Caption = 'Book Admin';
     Permissions = table "DEV Author" = X,
         tabledata "DEV Author" = RIMD,
+        table "DEV Author Type" = X,
+        tabledata "DEV Author Type" = RIMD,
         table "DEV Book" = X,
         tabledata "DEV Book" = RIMD,
         table "DEV Book Author" = X,

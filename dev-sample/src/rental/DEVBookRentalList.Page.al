@@ -1,3 +1,5 @@
+namespace SummitNA.BookManagement.Rental;
+
 page 50108 "DEV Book Rental List"
 {
     AnalysisModeEnabled = false;
@@ -19,23 +21,18 @@ page 50108 "DEV Book Rental List"
             {
                 field("No."; Rec."No.")
                 {
-                    ToolTip = 'Specifies the value of the No. field.';
                 }
                 field(Description; Rec.Description)
                 {
-                    ToolTip = 'Specifies the value of the Description field.';
                 }
-                field("Date"; Rec."Date")
+                field(ContractDate; Rec."Contract Date")
                 {
-                    ToolTip = 'Specifies the value of the Date field.';
                 }
-                field("Contact No."; Rec."Contact No.")
+                field(ContactNo; Rec."Contact No.")
                 {
-                    ToolTip = 'Specifies the value of the Contact No. field.';
                 }
-                field("Contact Name"; Rec."Contact Name")
+                field(ContactName; Rec."Contact Name")
                 {
-                    ToolTip = 'Specifies the value of the Contact Name field.';
                 }
             }
         }

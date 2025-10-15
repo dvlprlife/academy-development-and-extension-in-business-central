@@ -1,15 +1,27 @@
 {
 	"folders": [
 		{
-			"path": "api-sample"
-		},
-		{
+			"name": "dev-sample",
 			"path": "dev-sample"
 		},
 		{
+			"name": "dep-sample",
 			"path": "dep-sample"
 		},
 		{
+			"name": "api-sample",
+			"path": "api-sample"
+		},
+		{
+			"name": "error-sample",
+			"path": "error-sample"
+		},
+		{
+			"name": "demo-data",
+			"path": "demo-data"
+		},
+		{
+			"name": "supporting-files",
 			"path": "supporting-files"
 		}
 	],
@@ -23,7 +35,16 @@
 		"al.ruleSetPath": "../supporting-files/sa.ruleset.json",
 		"al.snapshotDebuggingPath": "../supporting-files/.snapshot",
 		"al.snapshotOutputPath": "../Supporting-Files/.snapshots",
-		"editor.renderWhitespace": "all"
+		"editor.renderWhitespace": "all",
+		"mcp": {
+			"servers": {
+				"my-mcp-server-1a77038f": {
+					"url": "https://learn.microsoft.com/api/mcp",
+					"type": "http"
+				}
+			},
+			"inputs": []
+		}
 	},
 	"launch": {
 		"version": "0.2.0",

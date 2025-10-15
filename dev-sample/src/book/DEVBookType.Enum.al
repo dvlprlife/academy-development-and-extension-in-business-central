@@ -1,3 +1,5 @@
+namespace SummitNA.BookManagement.Book;
+
 enum 50102 "DEV Book Type"
 {
     Extensible = true;

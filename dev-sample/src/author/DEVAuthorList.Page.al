@@ -1,3 +1,6 @@
+namespace SummitNA.BookManagement.Author;
+
+using SummitNA.BookManagement.Book;
 page 50100 "DEV Author List"
 {
     ApplicationArea = All;
@@ -16,23 +19,18 @@ page 50100 "DEV Author List"
             {
                 field("No."; Rec."No.")
                 {
-                    ToolTip = 'Specifies the value of the No. field.';
                 }
                 field("First Name"; Rec."First Name")
                 {
-                    ToolTip = 'Specifies the value of the First Name field.';
                 }
                 field("Middle Name"; Rec."Middle Name")
                 {
-                    ToolTip = 'Specifies the value of the Middle Name field.';
                 }
                 field("Last Name"; Rec."Last Name")
                 {
-                    ToolTip = 'Specifies the value of the Last Name field.';
                 }
                 field(Status; Rec.Status)
                 {
-                    ToolTip = 'Specifies the value of the Status field.';
                 }
             }
         }
@@ -46,7 +44,7 @@ page 50100 "DEV Author List"
                 ApplicationArea = Basic, Suite;
                 Caption = 'Books';
                 Image = Card;
-                ToolTip = 'View orthe books for this book.';
+                ToolTip = 'View of the books for this author.';
 
                 trigger OnAction()
                 var

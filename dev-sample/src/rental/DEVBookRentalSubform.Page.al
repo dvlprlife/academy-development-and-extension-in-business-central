@@ -1,3 +1,4 @@
+namespace SummitNA.BookManagement.Rental;
 page 50106 "DEV Book Rental Subform"
 {
     ApplicationArea = All;
@@ -14,13 +15,11 @@ page 50106 "DEV Book Rental Subform"
         {
             repeater(General)
             {
-                field("Book No."; Rec."Book No.")
+                field(BookNo; Rec."Book No.")
                 {
-                    ToolTip = 'Specifies the value of the Contact No. field.';
                 }
-                field("Book Title"; Rec."Book Title")
+                field(BookTitle; Rec."Book Title")
                 {
-                    ToolTip = 'Specifies the value of the Book Title field.';
                 }
             }
         }

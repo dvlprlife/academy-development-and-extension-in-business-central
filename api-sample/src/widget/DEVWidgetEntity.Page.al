@@ -1,3 +1,5 @@
+namespace SummitNA.API.Widget;
+
 page 50200 "DEV Widget Entity"
 {
     APIGroup = 'sample';

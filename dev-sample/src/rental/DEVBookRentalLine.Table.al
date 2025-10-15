@@ -1,3 +1,7 @@
+namespace SummitNA.BookManagement.Rental;
+
+using SummitNA.BookManagement.Book;
+
 table 50104 "DEV Book Rental Line"
 {
     Caption = 'Book Rental Line';
@@ -18,6 +22,7 @@ table 50104 "DEV Book Rental Line"
         {
             Caption = 'Book No.';
             TableRelation = "DEV Book"."No." where(Status = const("DEV Book Status"::Available));
+            ToolTip = 'Specifies the value of the Contact No. field.';
         }
         field(25; "Book Title"; Text[50])
         {
@@ -25,6 +30,7 @@ table 50104 "DEV Book Rental Line"
             Caption = 'Book Title';
             Editable = false;
             FieldClass = FlowField;
+            ToolTip = 'Specifies the value of the Book Title field.';
         }
     }
     keys

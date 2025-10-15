@@ -1,3 +1,8 @@
+namespace SummitNA.BookManagementExt.RentalExt;
+
+using SummitNA.BookManagement.Rental;
+using SummitNA.BookManagementExt.Management;
+
 pageextension 50121 "DEP Rental Ext" extends "DEV Book Rental"
 {
     actions

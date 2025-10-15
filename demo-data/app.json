@@ -1,0 +1,46 @@
+{
+  "id": "eeb5ac52-d2de-4f2c-b697-c56566a1b7ef",
+  "name": "SummitNA Book Management Demo Data",
+  "publisher": "SummitNA 2025",
+  "version": "27.0.0.0",
+  "brief": "Demo Data for SummitNA Book Management",
+  "description": "Demo Data for SummitNA Book Management",
+  "privacyStatement": "https://localhost/privacy.html",
+  "EULA": "https://localhost/EULA.html",
+  "help": "https://localhost/help.html",
+  "url": "https://localhost",
+  "logo": "./logo/logo.png",
+  "dependencies": [
+    {
+      "id": "eeb5ab52-dbde-4bac-b267-c44446a1b7ef",
+      "name": "SummitNA Book Management",
+      "publisher": "SummitNA 2025",
+      "version": "27.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "27.0.0.0",
+  "idRanges": [
+    {
+      "from": 50320,
+      "to": 50349
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "13.0",
+  "features": [
+    "NoImplicitWith",
+    "TranslationFile"
+  ],
+  "suppressWarnings": [
+    "AS0051",
+    "AS0052",
+    "AS0084",
+    "AS0092"
+  ]
+}

@@ -1,3 +1,4 @@
+namespace SummitNA.BookManagement.Rental;
 page 50105 "DEV Book Rental"
 {
     ApplicationArea = All;
@@ -14,36 +15,19 @@ page 50105 "DEV Book Rental"
             {
                 Caption = 'General';
 
-                field("No."; Rec."No.")
-                {
-                    ToolTip = 'Specifies the value of the No. field.';
-                }
-                field("Date"; Rec."Date")
-                {
-                    ToolTip = 'Specifies the value of the Date field.';
-                }
-                field(Description; Rec.Description)
-                {
-                    ToolTip = 'Specifies the value of the Description field.';
-                }
-                field(Status; Rec.Status)
-                {
-                    ToolTip = 'Specifies the value of the status field.';
-                }
+                field("No."; Rec."No.") { }
+                field(ContractDate; Rec."Contract Date") { }
+                field(ReturnDate; Rec."Return Date") { }
+                field(Description; Rec.Description) { }
+                field(Status; Rec.Status) { }
             }
             group(Contact)
             {
-                field("Contact No."; Rec."Contact No.")
-                {
-                    ToolTip = 'Specifies the value of the Contact No. field.';
-                }
-                field("Contact Name"; Rec."Contact Name")
-                {
-                    ToolTip = 'Specifies the value of the Contact Name field.';
-                }
+                field(ContactNo; Rec."Contact No.") { }
+                field(ContactName; Rec."Contact Name") { }
             }
 
-            part(Rentalines; "DEV Book Rental Subform")
+            part(RentalLines; "DEV Book Rental Subform")
             {
                 ApplicationArea = Basic, Suite;
                 SubPageLink = "Rental Header No." = field("No.");
@@ -63,9 +47,9 @@ page 50105 "DEV Book Rental"
 
                 trigger OnAction()
                 var
-                    RentalManagment: Codeunit "DEV Rental Managment";
+                    RentalManagement: Codeunit "DEV Rental Management";
                 begin
-                    RentalManagment.Run(Rec);
+                    RentalManagement.Run(Rec);
                 end;
             }
         }

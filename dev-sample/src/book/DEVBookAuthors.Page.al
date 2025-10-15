@@ -1,3 +1,7 @@
+namespace SummitNA.BookManagement.Book;
+
+using SummitNA.BookManagement.Author;
+
 page 50104 "DEV Book Authors"
 {
     ApplicationArea = All;
@@ -12,15 +16,13 @@ page 50104 "DEV Book Authors"
         {
             repeater(General)
             {
-                field("Author  No."; Rec."Author No.")
+                field(AuthorNo; Rec."Author No.")
                 {
-                    ToolTip = 'Specifies the value of the Author No. field.';
                 }
-                field("Author Last Name"; Rec."Author Last Name")
+                field(AuthorLastName; Rec."Author Last Name")
                 {
-                    ToolTip = 'Specifies the value of the Author Name field.';
                 }
-                field("Author Name"; FullName)
+                field(AuthorName; FullName)
                 {
                     Caption = 'Full Name';
                     Editable = false;
