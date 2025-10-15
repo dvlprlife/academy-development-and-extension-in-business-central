@@ -1,3 +1,5 @@
+namespace SummitNA.API.Widget;
+
 page 50201 "DEV Widget List"
 {
     ApplicationArea = All;

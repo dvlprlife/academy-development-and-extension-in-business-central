@@ -6,7 +6,7 @@ pageextension 50120 "DEP Book Card Ext" extends "DEV Book Card"
 {
     layout
     {
-        modify("Book Type")
+        modify(BookType)
         {
             Caption = 'Type';
         }

@@ -1,3 +1,5 @@
+namespace SummitNA.API.Widget;
+
 table 50200 "DEV Widget"
 {
     Caption = 'Widget';

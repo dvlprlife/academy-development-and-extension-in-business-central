@@ -15,7 +15,7 @@ pageextension 50102 "DEV BM Role Center Ext" extends "Business Manager Role Cent
             group(DEVBooksManagement)
             {
                 Caption = 'Books Management';
-
+                Image = Job;
                 action(DEVAuthors)
                 {
                     ApplicationArea = All;

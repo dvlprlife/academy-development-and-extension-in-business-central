@@ -1,16 +1,20 @@
 {
 	"folders": [
 		{
-			"name": "api-sample",
-			"path": "api-sample"
-		},
-		{
 			"name": "dev-sample",
 			"path": "dev-sample"
 		},
 		{
 			"name": "dep-sample",
 			"path": "dep-sample"
+		},
+		{
+			"name": "api-sample",
+			"path": "api-sample"
+		},
+		{
+			"name": "error-sample",
+			"path": "error-sample"
 		},
 		{
 			"name": "demo-data",
