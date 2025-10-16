@@ -19,7 +19,7 @@ codeunit 50151 "DEV Error Management"
             TransErrorInfo.Verbosity := Verbosity::Error;
             TransErrorInfo.DataClassification := DataClassification::CustomerContent;
             TransErrorInfo.SystemId := TransactionEntry.SystemId;
-            TransErrorInfo.Message := StrSubstNo('%1 %2 does not. exist. What would you like to do?', Item.TableCaption, TransactionEntry."Code");
+            TransErrorInfo.Message := StrSubstNo('%1 %2 does not exist. What would you like to do?', Item.TableCaption, TransactionEntry."Code");
             TransErrorInfo.AddAction('Add Item', Codeunit::"DEV Action Management", 'ErrAddItem');
             TransErrorInfo.AddAction('Fix Entry', Codeunit::"DEV Action Management", 'ErrFixEntry');
 
