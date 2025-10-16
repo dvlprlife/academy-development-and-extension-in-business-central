@@ -1,3 +1,5 @@
+namespace SummitNA.BookManagement.Author;
+
 table 50105 "DEV Author Type"
 {
     Caption = 'Author Type';
