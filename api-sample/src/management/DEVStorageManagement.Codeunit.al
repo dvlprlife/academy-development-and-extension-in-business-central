@@ -38,7 +38,7 @@ codeunit 50201 "DEV Storage Management"
     end;
 
     [NonDebuggable]
-    local procedure SaveStorageValue(StorageKey: Text; StorageValue: SecretText)
+    local procedure SaveStorageValue(StorageKey: Text; StorageValue: Text)
     begin
         if IsolatedStorage.Contains(StorageKey, DataScope::Module) then
             IsolatedStorage.Delete(StorageKey);
