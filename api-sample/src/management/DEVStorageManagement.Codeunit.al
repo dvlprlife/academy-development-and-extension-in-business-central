@@ -9,8 +9,8 @@ codeunit 50201 "DEV Storage Management"
     var
         Value: Code[80];
     begin
-        if not Evaluate(Value, GetStorageValue(GetAPIStorageKey())) then
-            Value := '<API_KEY>';
+        if not Evaluate(Value, GetStorageValue(GetAPIStorageKey())) or (Value = '') then
+            Value := 'DEMO';
         exit(Value);
     end;
 

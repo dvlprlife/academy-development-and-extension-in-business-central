@@ -13,13 +13,15 @@ codeunit 50200 "DEV Stock Management"
         ProcessStockData(StockDataJsonText, MetaDictionary, TimeSeriesData);
     end;
 
+    [NonDebuggable]
     local procedure GetURI(Symbol: Code[10]; TimeSeries: Enum "DEV Time Series"): Text
     var
+        StorageManagement: Codeunit "DEV Storage Management";
         TimeSeriesText: Text;
         URI: Text;
     begin
         TimeSeriesText := TimeSeries.Names.Get(TimeSeries.Ordinals.IndexOf(TimeSeries.AsInteger()));
-        URI := StrSubstNo('https://www.alphavantage.co/query?function=%2&symbol=%1&outputsize=full&apikey=4M4NQT3GEGN8K8WO', Symbol, TimeSeriesText);
+        URI := StrSubstNo('https://www.alphavantage.co/query?function=%2&symbol=%1&outputsize=full&apikey=%3', Symbol, TimeSeriesText, StorageManagement.GetAPIKey());
         exit(URI);
     end;
 

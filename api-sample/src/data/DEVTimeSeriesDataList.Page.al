@@ -1,15 +1,13 @@
 namespace SummitNA.API.Stock;
 
-using Microsoft.Inventory.Availability;
-
 page 50202 "DEV Time Series Data List"
 {
     ApplicationArea = Basic, Suite;
     Caption = 'Time Series Data List';
+    Editable = true;
     PageType = List;
     SourceTable = "DEV Time Series Data";
     UsageCategory = Lists;
-    Editable = true;
 
     layout
     {
@@ -20,13 +18,11 @@ page 50202 "DEV Time Series Data List"
                 Caption = 'General';
                 field(Symbol; Symbol)
                 {
-                    ApplicationArea = Basic, Suite;
                     TableRelation = "DEV Stock".Symbol;
                     ToolTip = 'Specifies the stock symbol associated with the time series data.';
                 }
                 field("Time Series Type"; TimeSeries)
                 {
-                    ApplicationArea = Basic, Suite;
                     Caption = 'Time Series';
                     ToolTip = 'Specifies the type of time series data (Daily, Weekly, Monthly).';
                 }
@@ -35,32 +31,25 @@ page 50202 "DEV Time Series Data List"
             {
                 field("Entry No."; Rec."Entry No.")
                 {
-                    ApplicationArea = Basic, Suite;
                     Visible = false;
                 }
                 field("Date"; Rec."Date")
                 {
-                    ApplicationArea = Basic, Suite;
                 }
                 field(Open; Rec.Open)
                 {
-                    ApplicationArea = Basic, Suite;
                 }
                 field(High; Rec.High)
                 {
-                    ApplicationArea = Basic, Suite;
                 }
                 field(Low; Rec.Low)
                 {
-                    ApplicationArea = Basic, Suite;
                 }
                 field(Close; Rec.Close)
                 {
-                    ApplicationArea = Basic, Suite;
                 }
                 field(Volume; Rec.Volume)
                 {
-                    ApplicationArea = Basic, Suite;
                 }
             }
         }
@@ -79,14 +68,13 @@ page 50202 "DEV Time Series Data List"
 
                 trigger OnAction()
                 var
+                    TimeSeriesData: Record "DEV Time Series Data" temporary;
                     StockManagement: Codeunit "DEV Stock Management";
                     MetaDictionary: Dictionary of [Text, Text];
-                    TimeSeriesData: Record "DEV Time Series Data" temporary;
                 begin
 
                     // Clear existing data
                     Rec.DeleteAll();
-
 
                     // Retrieve stock price data
                     StockManagement.RetrieveStockPrice(Symbol, TimeSeries, MetaDictionary, TimeSeriesData);
@@ -101,7 +89,6 @@ page 50202 "DEV Time Series Data List"
                     // Refresh the page to show the loaded data
                     Rec.FindFirst();
                     CurrPage.Update();
-
                 end;
             }
         }

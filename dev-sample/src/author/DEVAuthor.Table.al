@@ -154,6 +154,7 @@ table 50100 "DEV Author"
                 "No. Series" := xRec."No. Series";
             "No." := NoSeries.GetNextNo("No. Series", WorkDate());
         end;
+        OnAfterInsertAuthor(Rec);
     end;
 
     trigger OnDelete()
@@ -248,6 +249,11 @@ table 50100 "DEV Author"
 
     [IntegrationEvent(false, false)]
     local procedure OnBeforeTestNoSeries(var Author: Record "DEV Author"; xAuthor: Record "DEV Author"; var Handled: Boolean)
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    local procedure OnAfterInsertAuthor(Author: Record "DEV Author")
     begin
     end;
 }
